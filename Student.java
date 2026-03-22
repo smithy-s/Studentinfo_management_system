@@ -72,9 +72,9 @@ public class Student {
             }
 
             if (found)
-                display.setText("Deleted ✅");
+                display.setText("Deleted ");
             else
-                display.setText("Not Found ❌");
+                display.setText("Not Found ");
         });
 
         frame.setVisible(true);
