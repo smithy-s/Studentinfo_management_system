@@ -2,11 +2,10 @@ package Studentinfo;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.util.ArrayList;
+import java.util.*;
 
 public class Student {
 
-    // Simple storage
     ArrayList<String> students = new ArrayList<>();
 
     public Student() {
@@ -15,19 +14,15 @@ public class Student {
         frame.setLayout(new FlowLayout());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Input fields
+    
         JTextField idField = new JTextField(10);
         JTextField nameField = new JTextField(10);
 
         JTextArea display = new JTextArea(10, 30);
         display.setEditable(false);
-
-        // Buttons
         JButton addBtn = new JButton("Add");
         JButton viewBtn = new JButton("View");
         JButton deleteBtn = new JButton("Delete");
-
-        // Add components
         frame.add(new JLabel("ID:"));
         frame.add(idField);
 
@@ -46,10 +41,10 @@ public class Student {
             String name = nameField.getText();
 
             students.add(id + " - " + name);
-            display.setText("Student Added ✅");
+            display.setText("Student Added ");
         });
 
-        // VIEW
+        
         viewBtn.addActionListener(e -> {
             String data = "";
             for (String s : students) {
@@ -58,7 +53,6 @@ public class Student {
             display.setText(data);
         });
 
-        // DELETE (by ID)
         deleteBtn.addActionListener(e -> {
             String id = idField.getText();
             boolean found = false;
